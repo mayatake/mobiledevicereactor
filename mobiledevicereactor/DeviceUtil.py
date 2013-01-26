@@ -13,7 +13,7 @@ class DeviceUtil(object):
     classdocs
     '''
     prev_macaddress_list = []
-    registered_user = [('00:00:00:00:00:00','user1'),('00:00:00:00:00:01','user2')]
+    registered_users = [('00:00:00:00:00:00','user1'),('00:00:00:00:00:01','user2')]
 
     def __init__(self,params):
         '''
@@ -54,7 +54,7 @@ class DeviceUtil(object):
         :rtype: List
         :return: [(macaddress(string),user_name(string))]
         """    
-        return self.registered_user
+        return self.registered_users
         
         
     
@@ -66,10 +66,11 @@ class DeviceUtil(object):
         :rtype: tuple
         :return: (macaddress(string), user_name(string))
         """
-        for  in registered_user[mac]
-        mac_user = (macaddress, user_name)
+        for registered_user in self.registered_users:
+            if macaddress == registered_user[0]:
+                return registered_user
         
-        return  
+        return
     
     def _scan_macaddress(self):
         """
