@@ -51,8 +51,6 @@ class ActionExecutor(object):
         #config = ConfigParser()
         #config.read("../conf/plugins.ini")
         #config.items('plugins')
-        #from Action import Action
-        #Module Name entry class
         module_names = {'Action':'Action'}
         modules =[]
         for name in module_names.keys():
