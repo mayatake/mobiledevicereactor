@@ -4,13 +4,13 @@ Created on 2013/01/26
 @author: kawamuramasato
 '''
 
-class MyClass(object):
+class DeviceUtil(object):
     '''
     classdocs
     '''
 
 
-    def __init__(self,params):
+    def __init__(self):
         '''
         Constructor
         '''
