@@ -49,7 +49,7 @@ class DeviceUtil(object):
     
     def get_registered_devices(self):
         """
-        登録されているMACアドレスとそれに対応するユーザ名を返す。
+        登録されているMACアドレスとそれに対応するユーザ名の一覧を返す。
         
         :rtype: List
         :return: [(macaddress(string),user_name(string))]
@@ -60,11 +60,16 @@ class DeviceUtil(object):
     
     def get_registered_device(self, macaddress):
         """
+        引数で指定するMACアドレスに対応するユーザを登録されているリストから検索し、
+        MACアドレスとユーザ名の組を返却する
         :param macaddress String: macaddress
         :rtype: tuple
         :return: (macaddress(string), user_name(string))
         """
+        for  in registered_user[mac]
+        mac_user = (macaddress, user_name)
         
+        return  
     
     def _scan_macaddress(self):
         """
