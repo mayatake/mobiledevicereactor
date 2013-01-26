@@ -1,33 +1,35 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
 Created on 2013/01/26
 
 @author: kawamuramasato
 '''
+from DeviceUtil import DeviceUtil
 
 class ActionExecutor(object):
     '''
     classdocs
     '''
+    dev_util = DeviceUtil()
 
-
-    def __init__(self,params):
+    def __init__(self):
         '''
         Constructor
         '''
     
     def execute(self):
         """
-        MobileDeviceReactorのメイン処理
-        
+        MobileDeviceReactorのメイン処理 
         """
         # get status 
         dev_status = self.dev_util.get_devices_status()
         
         # (user_name, status)
-        users = [(self.dev_util.get_registed_device(macaddress)[1], status) \
+        users = [(self.dev_util.get_registered_device(macaddress)[1], status) \
                         for macaddress, status in dev_status]
         # Load Actions
-        actions = self.get_actions(self)
+        actions = self.get_actions()
         # IN FUTURE; do_action is execute of threading. 
         for action in actions:
             for user_name, status in users:
@@ -55,4 +57,3 @@ class ActionExecutor(object):
             c = getattr(module,module_names[name])
             modules.append(c())
         return modules
-    

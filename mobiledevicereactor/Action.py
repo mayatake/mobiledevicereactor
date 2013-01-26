@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
 Created on 2013/01/26
 
@@ -10,7 +12,7 @@ class Action(object):
     '''
 
 
-    def __init__(self,params):
+    def __init__(self):
         '''
         Constructor
         '''
@@ -19,6 +21,8 @@ class Action(object):
         """
         Action
         """
+        print user_name
+        print device_status
         print "Not Implements"
-        pass
+    
         

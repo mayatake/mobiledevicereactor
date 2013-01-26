@@ -15,7 +15,7 @@ class DeviceUtil(object):
     prev_macaddress_list = []
     registered_users = [('00:00:00:00:00:00','user1'),('00:00:00:00:00:01','user2')]
 
-    def __init__(self,params):
+    def __init__(self):
         '''
         Constructor
         '''
@@ -70,7 +70,7 @@ class DeviceUtil(object):
             if macaddress == registered_user[0]:
                 return registered_user
         
-        return
+        return (macaddress,'')
     
     def _scan_macaddress(self):
         """
