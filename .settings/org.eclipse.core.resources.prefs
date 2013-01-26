@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
 encoding//conf/plugins.ini=UTF-8
 encoding//mobiledevicereactor/ActionExecutor.py=utf-8
+encoding//mobiledevicereactor/DeviceUtil.py=utf-8
