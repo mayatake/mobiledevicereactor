@@ -18,6 +18,6 @@ class Action(object):
         """
         Action
         """
-        print "NotImplements"
+        print "Not Implements"
         pass
         
