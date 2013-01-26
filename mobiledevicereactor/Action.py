@@ -14,4 +14,11 @@ class Action(object):
         '''
         Constructor
         '''
+    
+    def do_action(self,user_name,device_status):
+        """
+        Action
+        """
+        print "Not Implements"
+        pass
         
