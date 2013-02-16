@@ -30,7 +30,7 @@ class Action(object):
         print "Not Implements"
         
         chunk=1024
-        filename
+        
         if device_status == False:
             filename='okaeri.wav'
         else:
