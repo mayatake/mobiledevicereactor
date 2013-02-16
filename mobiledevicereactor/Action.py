@@ -8,6 +8,7 @@ Created on 2013/01/26
 
 import pyaudio
 import wave
+import commands
 
 class Action(object):
     '''
@@ -34,7 +35,11 @@ class Action(object):
             filename='okaeri.wav'
         else:
             filename='itera.wav'
-            
+        
+        playdata = "aplay "+ filename
+        results_aplay = commands.getoutput(playdata)
+         
+        '''    
         wf = wave.open(filename,'rb')
         p=pyaudio.PyAudio()
         stream = p.open(format =p.get_format_from_width(wf.getsampwidth()),channels = wf.getnchannels(),rate = wf.getframerate(),output = True)
@@ -48,6 +53,7 @@ class Action(object):
             remain = remain - s
         stream.close()
         p.terminate()
+        '''
         print "end of module"
     
         
