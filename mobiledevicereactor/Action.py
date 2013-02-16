@@ -30,13 +30,13 @@ class Action(object):
         print "Not Implements"
         
         chunk=1024
-        
+        filename
         if device_status == False:
             filename='okaeri.wav'
         else:
             filename='itera.wav'
         
-        playdata = "aplay "+ filename
+        playdata = "afplay "+ filename
         results_aplay = commands.getoutput(playdata)
          
         '''    
