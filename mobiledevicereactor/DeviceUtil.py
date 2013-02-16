@@ -78,7 +78,7 @@ class DeviceUtil(object):
         """
         :return: ([macaddress(string)])
         """
-        commands.getoutput("sudo arp -d -a")
+        commands.getoutput("sudo arp -d 192.168.1.35")
         commands.getoutput("ping -c 2 -b 192.168.1.255")
         results_arp = commands.getoutput("arp -a")
         macaddr_list = [result_arp.split(' ')[3] for result_arp in results_arp.split('\n')]
