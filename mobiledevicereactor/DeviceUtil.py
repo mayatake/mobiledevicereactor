@@ -13,7 +13,7 @@ class DeviceUtil(object):
     classdocs
     '''
     prev_macaddress_list = []
-    registered_users = [('00:00:00:00:00:00','user1'),('00:00:00:00:00:01','user2')]
+    registered_users = [('54:26:96:3d:31:f','koyama'),('00:00:00:00:00:01','user2')]
 
     def __init__(self):
         '''
@@ -35,6 +35,8 @@ class DeviceUtil(object):
         incomming_mac_addr = [mac for mac in macaddress_list if mac not in self.prev_macaddress_list]
         ## existing_mac_addr = [mac for mac in self.prev_macaddress_list if mac in macaddress_list]
         
+        print "out",outgoing_mac_addr
+        print "in",incomming_mac_addr
         devices_status = []
         
         for mac in outgoing_mac_addr:
@@ -77,8 +79,8 @@ class DeviceUtil(object):
         :return: ([macaddress(string)])
         """
         
-        result_arp = commands.getoutput("arp -a")
-        macaddr_list = [result_arp.split(' ')[3] for result_arp in result_arp.split('¥n')]
+        results_arp = commands.getoutput("arp -a")
+        macaddr_list = [result_arp.split(' ')[3] for result_arp in results_arp.split('\n')]
         
         return macaddr_list
         

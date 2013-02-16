@@ -22,21 +22,29 @@ class ActionExecutor(object):
         """
         MobileDeviceReactorのメイン処理 
         """
+        print "in execute method" 
         # get status 
         dev_status = self.dev_util.get_devices_status()
+        print "dev_status",dev_status
         
         # (user_name, status)
         users = [(self.dev_util.get_registered_device(macaddress)[1], status) \
                         for macaddress, status in dev_status]
         # Load Actions
         actions = self.get_actions()
+        print "actions,users",actions,users
         # IN FUTURE; do_action is execute of threading. 
         for action in actions:
             for user_name, status in users:
-                try:
-                    action.do_action(user_name,status)
-                except AttributeError,e:
-                    print e
+                print "user_name",user_name
+                user = ()
+                for user in self.dev_util.registered_users:
+                    if user[1] == user_name:
+                        try:
+                            print "in try"
+                            action.do_action(user_name,status)
+                        except AttributeError,e:
+                            print e
         
     def get_actions(self):
         """

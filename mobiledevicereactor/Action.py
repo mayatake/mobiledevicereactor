@@ -6,6 +6,9 @@ Created on 2013/01/26
 @author: kawamuramasato
 '''
 
+import pyaudio
+import wave
+
 class Action(object):
     '''
     classdocs
@@ -24,5 +27,27 @@ class Action(object):
         print user_name
         print device_status
         print "Not Implements"
+        
+        chunk=1024
+        
+        if device_status == False:
+            filename='okaeri.wav'
+        else:
+            filename='itera.wav'
+            
+        wf = wave.open(filename,'rb')
+        p=pyaudio.PyAudio()
+        stream = p.open(format =p.get_format_from_width(wf.getsampwidth()),channels = wf.getnchannels(),rate = wf.getframerate(),output = True)
+        ##print wf.getformat_from_width(wf.
+        remain = wf.getnframes()
+    
+        while remain > 0 :
+            s = min(chunk, remain)
+            data = wf.readframes(s)
+            stream.write(data)
+            remain = remain - s
+        stream.close()
+        p.terminate()
+        print "end of module"
     
         
