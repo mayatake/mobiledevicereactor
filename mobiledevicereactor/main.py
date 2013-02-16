@@ -11,8 +11,8 @@ from ActionExecutor import ActionExecutor
 
 if __name__ == '__main__':
     ae = ActionExecutor()
-    for i in xrange(10):
+    for i in xrange(20):
         ae.execute()
         print "before sleep"
-        time.sleep(5)
+        time.sleep(3)
         print "after sleep"
