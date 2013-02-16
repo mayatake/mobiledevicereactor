@@ -36,7 +36,7 @@ class Action(object):
         else:
             filename='itera.wav'
         
-        playdata = "afplay "+ filename
+        playdata = "aplay "+ filename
         results_aplay = commands.getoutput(playdata)
          
         '''    
