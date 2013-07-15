@@ -14,7 +14,7 @@ class DeviceUtil(object):
     '''
     prev_macaddress_list = []
     ## Mac OSで試す場合は "0f" -> "f"としておく。
-    registered_users = [('54:26:96:3d:31:f','koyama'),('00:00:00:00:00:01','user2')]
+    registered_users = [('54:26:96:3d:31:0f','koyama'),('00:00:00:00:00:01','user2')]
 
     def __init__(self):
         '''
