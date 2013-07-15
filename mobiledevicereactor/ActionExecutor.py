@@ -58,7 +58,7 @@ class ActionExecutor(object):
         #config = ConfigParser()
         #config.read("../conf/plugins.ini")
         #config.items('plugins')
-        module_names = {'Action':'Action'}
+        module_names = {'Action':'Action','MailAction':'MailAction'}
         modules =[]
         for name in module_names.keys():
             module = __import__(name, globals(), locals(), [module_names[name]])

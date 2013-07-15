@@ -13,7 +13,8 @@ class DeviceUtil(object):
     classdocs
     '''
     prev_macaddress_list = []
-    registered_users = [('54:26:96:3d:31:0f','koyama'),('00:00:00:00:00:01','user2')]
+    ## Mac OSで試す場合は "0f" -> "f"としておく。
+    registered_users = [('54:26:96:3d:31:f','koyama'),('00:00:00:00:00:01','user2')]
 
     def __init__(self):
         '''
@@ -78,7 +79,7 @@ class DeviceUtil(object):
         """
         :return: ([macaddress(string)])
         """
-        commands.getoutput("sudo arp -d 192.168.1.35")
+        commands.getoutput("sudo arp -d 192.168.1.31")
         commands.getoutput("ping -c 2 -b 192.168.1.255")
         results_arp = commands.getoutput("arp -a")
         macaddr_list = [result_arp.split(' ')[3] for result_arp in results_arp.split('\n')]
